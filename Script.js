@@ -1,8 +1,8 @@
 let intervalID;
 let totalTime = document.getElementById("timer").innerHTML.substring(0, 2) * 60;
-var minutes;
-var seconds;
-var breakMode;
+let minutes;
+let seconds;
+let breakMode;
 
 function initialiseApp(buttonText = document.getElementById("button").innerHTML) {
     if (buttonText === 'START') {
@@ -19,12 +19,12 @@ function initialiseApp(buttonText = document.getElementById("button").innerHTML)
     }
 }
 function playWorkSound(){
-    var work = new Audio('resources/work.mp3');
+    const work = new Audio('resources/work.mp3');
     work.play();
 }
 
 function playBreakSound(){
-    var work = new Audio('resources/break.mp3');
+    const work = new Audio('resources/break.mp3');
     work.play();
 }
 
