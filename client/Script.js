@@ -94,3 +94,14 @@ function callVisitorLogger(){
     const loggerURL = "https://timed-tomatoes-page-load-logger.azurewebsites.net/api/visitorlogger"
     fetch(loggerURL);
 }
+
+const modal = document.getElementById("myModal");
+const span = document.getElementsByClassName("close")[0];
+
+function openSettings() {
+    modal.style.display = "block";
+}
+
+function closeSpan(){
+    modal.style.display = "none";
+}

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" height=device-height content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="/client/images/favicon.png">
 </head>
 <body onload="callVisitorLogger()">
@@ -14,8 +15,14 @@
         </div>
         <div>
             <span>
-                <button type="button">Customize</button>
+                <button type="button" id="settings" class="settings" onclick="openSettings()"><i class="fa fa-sliders fa-3x" aria-hidden="true"></i></button>
             </span>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeSpan()">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+            </div>
         </div>
     </header>    
     <div>
