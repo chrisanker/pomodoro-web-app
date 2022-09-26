@@ -7,8 +7,8 @@ on:
   push:
     branches:
       - master
-    path:
-      - function-apps/*
+    paths:
+      - function-apps/**
   workflow_dispatch:
 
 env:
