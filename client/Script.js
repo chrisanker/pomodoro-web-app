@@ -89,3 +89,8 @@ function changeBgColor(){
         document.getElementById("circle").style.backgroundColor = "red"
     }
 }
+
+function callVisitorLogger(){
+    const loggerURL = "https://timed-tomatoes-page-load-logger.azurewebsites.net/api/visitorlogger"
+    fetch(loggerURL);
+}
