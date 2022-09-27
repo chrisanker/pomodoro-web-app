@@ -92,7 +92,7 @@ function changeBgColor(){
 
 function callVisitorLogger(){
     const loggerURL = "https://timed-tomatoes-page-load-logger.azurewebsites.net/api/visitorlogger"
-    fetch(loggerURL);
+    fetch(loggerURL).then(res => console.log(res) );
 }
 
 const modal = document.getElementById("myModal");
