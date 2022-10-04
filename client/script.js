@@ -3,7 +3,6 @@ let minutes;
 let seconds;
 let breakMode;
 let totalTime;
-const funcs = require('./funcs');
 
 function initialiseApp(buttonText = document.getElementById("button").innerHTML) {
     if (buttonText === 'START') {
@@ -32,7 +31,7 @@ function playBreakSound(){
 function startBreak(){
     breakMode = true;
     document.getElementById("minutes").innerHTML = "00";
-    totalTime = 10;
+    totalTime = document.getElementById('shortbreak').value * 60;
     playBreakSound();
     countDown(breakMode);
 }
