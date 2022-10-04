@@ -1,8 +1,8 @@
 let intervalID;
-let totalTime = document.getElementById("timer").innerHTML.substring(0, 2) * 60;
 let minutes;
 let seconds;
 let breakMode;
+let totalTime;
 
 function initialiseApp(buttonText = document.getElementById("button").innerHTML) {
     if (buttonText === 'START') {
@@ -30,8 +30,8 @@ function playBreakSound(){
 
 function startBreak(){
     breakMode = true;
-    document.getElementById("timer").innerHTML = "05:00";
-    totalTime = 300;
+    document.getElementById("minutes").innerHTML = "00";
+    totalTime = 10;
     playBreakSound();
     countDown(breakMode);
 }
@@ -63,8 +63,14 @@ function countDown(onABreak){
 function startWork(){
     breakMode = false;
     playWorkSound();
-    document.getElementById("timer").innerHTML = "25:00";
-    totalTime = document.getElementById("timer").innerHTML.substring(0, 2) * 60;
+    if (document.getElementById("pomodoro").value != null){
+        minutes = document.getElementById("pomodoro").value;
+    }
+    else {
+        minutes = 25;
+    }
+    document.getElementById("minutes").innerHTML = minutes;
+    totalTime = minutes * 60;
     countDown(breakMode);
 }
 
@@ -78,7 +84,8 @@ function decrementTime(){
     if (seconds < 10){
         seconds = "0" + seconds;
     }
-    document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
 }
 
 function changeBgColor(){
@@ -104,4 +111,18 @@ function openSettings() {
 
 function closeSpan(){
     modal.style.display = "none";
+}
+function updateTimes(){
+    totalTime = document.getElementById("pomodoro").value * 60;
+    minutes = document.getElementById("pomodoro").value;
+    document.getElementById("minutes").innerHTML = minutes;
+    closeSpan();
+}
+
+function setDefaultTimes(){
+    minutes = 25;
+    totalTime = minutes * 60;
+    document.getElementById('pomodoro').value = minutes;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = '00';
 }
