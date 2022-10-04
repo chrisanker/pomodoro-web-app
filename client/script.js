@@ -3,6 +3,7 @@ let minutes;
 let seconds;
 let breakMode;
 let totalTime;
+const funcs = require('./funcs');
 
 function initialiseApp(buttonText = document.getElementById("button").innerHTML) {
     if (buttonText === 'START') {
