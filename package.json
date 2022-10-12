@@ -6,10 +6,11 @@
     "start": "func start",
     "test": "jest"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@babel/preset-env": "^7.19.3",
     "azure-functions-core-tools": "^4.x",
     "babel-jest": "^29.1.2",
-    "@babel/preset-env": "^7.19.3"
+    "jest-environment-jsdom": "^29.1.2",
+    "jest-environment-jsdom-global": "^4.0.0"
   }
 }
