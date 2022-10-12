@@ -29,7 +29,7 @@ export function initialiseApp() {
 export function setDefaultTimes(){
     console.log("page loaded");
     minutes = 25;
-    totalTime = minutes * 60;
+    totalTime = convertMinsToSecs(minutes);
     document.getElementById('pomodoro').value = minutes;
     document.getElementById('minutes').innerText = minutes;
     document.getElementById('seconds').innerText = '00';
@@ -50,7 +50,6 @@ function startBreak(){
     breakMode = true;
     document.getElementById("minutes").innerHTML = "00";
     totalTime = convertMinsToSecs(document.getElementById('shortbreak').value);
-    //totalTime = document.getElementById('shortbreak').value * 60;
     playBreakSound();
     countDown(breakMode);
 }
@@ -89,7 +88,7 @@ function startWork(){
         minutes = 25;
     }
     document.getElementById("minutes").innerHTML = minutes;
-    totalTime = minutes * 60;
+    totalTime = convertMinsToSecs(minutes);
     countDown(breakMode);
 }
 
@@ -132,7 +131,8 @@ export function closeSpan(){
     modal.style.display = "none";
 }
 export function updateTimes(){
-    totalTime = document.getElementById("pomodoro").value * 60;
+    const pomodoro = document.getElementById("pomodoro");
+    totalTime = convertMinsToSecs(pomodoro.value);
     minutes = document.getElementById("pomodoro").value;
     document.getElementById("minutes").innerHTML = minutes;
     closeSpan();
