@@ -37,12 +37,12 @@ export function setDefaultTimes(){
 
 
 function playWorkSound(){
-    const work = new Audio('resources/work.mp3');
+    const work = new Audio('resources/audio/work.mp3');
     work.play();
 }
 
 function playBreakSound(){
-    const work = new Audio('resources/break.mp3');
+    const work = new Audio('resources/audio/break.mp3');
     work.play();
 }
 
