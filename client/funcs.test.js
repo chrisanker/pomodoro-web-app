@@ -36,6 +36,9 @@ function inputValidator(userInput) {
     if (isNaN(userInput)){
         return true;
     }
+    if (userInput % 1 != 0){
+        return false;
+    }
     return true;
 }
 
@@ -46,8 +49,12 @@ describe('Input Validator function', () => {
         expect(disallowed).toBe(true);
     });
 
-    it('should allow only integers', () => {
-        let allowed = inputValidator(20)
+    it('should allow an integer value', () => {
+        let allowed = inputValidator(20);
         expect(allowed).toBe(true);
+    });
+    it('should disallow a decimal value', function () {
+        let allowed = inputValidator(23.2);
+        expect(allowed).toBe(false);
     });
 });
