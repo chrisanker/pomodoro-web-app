@@ -17,16 +17,34 @@ it('returns the state of the app', () => {
 describe('Append Zero function', () => {
 
     it('appends a zero to 1', () => {
-        let timeInMinutes = 1;
-        let result = appendZero(timeInMinutes);
+        let number = 1;
+        let result = appendZero(number);
         expect(result).toBe('01');
     });
 
     it('appends only a zero to values lower than 10', () => {
-        let timeInMinutes = 10;
-        let result = appendZero(timeInMinutes);
+        let number = 10;
+        let result = appendZero(number);
         expect(result).toBe(10);
+        number = 10020020000;
+        result = appendZero(number);
+        expect(result).toBe(10020020000);
     });
 });
 
+function inputValidator(userInput) {
+    if (isNaN(userInput)){
+        return true;
+    }
+    return true;
+}
 
+it('disallows non-numeric values', () => {
+    let userInput = 'x';
+    let disallowed = inputValidator(userInput);
+    expect(disallowed).toBe(true);
+});
+
+it('should allow only integers', () => {
+    expect(inputValidator(20)).toBe(true);
+});

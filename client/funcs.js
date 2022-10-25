@@ -139,9 +139,9 @@ export function updateTimes(){
     closeSpan();
 }
 
-export function appendZero(minutes) {
-    if (minutes < 10){
-        return '0' + minutes;
+export function appendZero(number) {
+    if (number < 10){
+        return '0' + number;
     }
-    return minutes;
+    return number;
 }
