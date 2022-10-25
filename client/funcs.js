@@ -4,6 +4,13 @@ let seconds;
 let breakMode;
 let totalTime;
 
+export class PomodoroApp {
+    constructor(breakMode) {
+        this.breakMode = breakMode;
+    }
+}
+let pomodoroApp = new PomodoroApp(false);
+
 export function convertMinsToSecs (minutes){
     const secsInMinutes = 60
     return minutes * secsInMinutes;
@@ -47,16 +54,16 @@ function playBreakSound(){
 }
 
 function startBreak(){
-    breakMode = true;
+    pomodoroApp.breakMode = true;
     document.getElementById("minutes").innerHTML = "00";
     totalTime = convertMinsToSecs(document.getElementById('shortbreak').value);
     playBreakSound();
     countDown(breakMode);
 }
 
-function countDown(onABreak){
+function countDown(){
     changeBgColor();
-    if (onABreak){
+    if (pomodoroApp.breakMode){
         intervalID = setInterval(() => {
             if (totalTime <= 0) {
                 clearInterval(intervalID);

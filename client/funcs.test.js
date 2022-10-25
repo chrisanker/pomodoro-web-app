@@ -1,24 +1,15 @@
-import {convertMinsToSecs} from "./funcs";
+import {convertMinsToSecs, PomodoroApp} from "./funcs";
+let app = new PomodoroApp(true);
 
 it('takes minutes and returns total seconds', () => {
     expect(convertMinsToSecs(25)).toBe(1500);
 });
 
-class PomodoroApp {
-    constructor(state) {
-        this.state = state;
-    }
-}
-
-function changeStateToBreak(app) {
-    return new PomodoroApp('break');
+function changeStateToBreak() {
+    app.breakMode = true;
 }
 
 it('returns the state of the app', () => {
-   /*newApp = changeStateToBreak(currentApp)
-
-    newAPP.state===break*/
-    let app = new PomodoroApp('break');
-    let newApp = changeStateToBreak(app);
-    expect(newApp.state).toBe('break');
+    changeStateToBreak();
+    expect(app.breakMode).toBe(true);
 });
