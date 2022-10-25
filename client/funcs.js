@@ -9,6 +9,7 @@ export class PomodoroApp {
         this.breakMode = breakMode;
     }
 }
+
 let pomodoroApp = new PomodoroApp(false);
 
 export function convertMinsToSecs (minutes){
@@ -24,8 +25,8 @@ export function initialiseApp() {
             playWorkSound();
         }
         document.getElementById("button").innerHTML = "STOP";
-        breakMode = false;
-        countDown(breakMode);
+        pomodoroApp.breakMode = false;
+        countDown();
     }
     if (buttonText === "STOP") {
         clearInterval(intervalID);
@@ -58,7 +59,7 @@ function startBreak(){
     document.getElementById("minutes").innerHTML = "00";
     totalTime = convertMinsToSecs(document.getElementById('shortbreak').value);
     playBreakSound();
-    countDown(breakMode);
+    countDown();
 }
 
 function countDown(){
@@ -86,7 +87,7 @@ function countDown(){
 }
 
 function startWork(){
-    breakMode = false;
+    pomodoroApp.breakMode = false;
     playWorkSound();
     if (document.getElementById("pomodoro").value != null){
         minutes = document.getElementById("pomodoro").value;
@@ -96,7 +97,7 @@ function startWork(){
     }
     document.getElementById("minutes").innerHTML = minutes;
     totalTime = convertMinsToSecs(minutes);
-    countDown(breakMode);
+    countDown();
 }
 
 function decrementTime(){
@@ -114,7 +115,7 @@ function decrementTime(){
 }
 
 function changeBgColor(){
-    if (breakMode){
+    if (pomodoroApp.breakMode){
         document.getElementById("circle").style.backgroundColor = "green"
     }
     else {
