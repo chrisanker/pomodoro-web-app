@@ -145,3 +145,10 @@ export function updateTimes(){
     document.getElementById("minutes").innerHTML = minutes;
     closeSpan();
 }
+
+export function appendZero(minutes) {
+    if (minutes < 10){
+        return '0' + minutes;
+    }
+    return minutes;
+}
