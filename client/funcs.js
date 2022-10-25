@@ -141,7 +141,7 @@ export function closeSpan(){
 export function updateTimes(){
     const pomodoro = document.getElementById("pomodoro");
     totalTime = convertMinsToSecs(pomodoro.value);
-    minutes = document.getElementById("pomodoro").value;
+    minutes = appendZero(document.getElementById("pomodoro").value);
     document.getElementById("minutes").innerHTML = minutes;
     closeSpan();
 }

@@ -13,6 +13,7 @@ it('returns the state of the app', () => {
     changeStateToBreak();
     expect(app.breakMode).toBe(true);
 });
+
 describe('Append Zero function', () => {
 
     it('appends a zero to 1', () => {
