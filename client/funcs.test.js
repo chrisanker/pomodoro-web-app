@@ -34,7 +34,7 @@ describe('Append Zero function', () => {
 
 function inputValidator(userInput) {
     if (isNaN(userInput)){
-        return true;
+        return false;
     }
     if (userInput % 1 != 0){
         return false;
@@ -43,17 +43,18 @@ function inputValidator(userInput) {
 }
 
 describe('Input Validator function', () => {
-    it('disallows non-numeric values', () => {
-        let userInput = 'x';
-        let disallowed = inputValidator(userInput);
-        expect(disallowed).toBe(true);
+
+    it('should not allow non-numeric values', () => {
+        let allowed = inputValidator('x');
+        expect(allowed).toBe(false);
     });
 
     it('should allow an integer value', () => {
         let allowed = inputValidator(20);
         expect(allowed).toBe(true);
     });
-    it('should disallow a decimal value', function () {
+
+    it('should disallow a decimal value',() => {
         let allowed = inputValidator(23.2);
         expect(allowed).toBe(false);
     });
