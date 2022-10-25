@@ -1,7 +1,6 @@
 let intervalID;
 let minutes;
 let seconds;
-let breakMode;
 let totalTime;
 
 export class PomodoroApp {
@@ -102,14 +101,8 @@ function startWork(){
 
 function decrementTime(){
     totalTime--;
-    minutes = Math.floor((totalTime % (1000 * 60 * 60)) / 60);
-    if (minutes < 10){
-        minutes = "0" + minutes;
-    }
-    seconds = totalTime % 60;
-    if (seconds < 10){
-        seconds = "0" + seconds;
-    }
+    minutes = appendZero(Math.floor((totalTime % (1000 * 60 * 60)) / 60));
+    seconds = appendZero(totalTime % 60);
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;
 }
