@@ -145,3 +145,15 @@ export function appendZero(number) {
     }
     return number;
 }
+
+export function inputValidator(userInput) {
+    if (isNaN(userInput)){
+        console.log(userInput + "is not valid");
+        return false;
+    }
+    if (userInput % 1 != 0){
+        console.log(userInput + "is not valid");
+        return false;
+    }
+    return true;
+}

@@ -1,4 +1,4 @@
-import {convertMinsToSecs, PomodoroApp, appendZero} from "./funcs";
+import {convertMinsToSecs, PomodoroApp, appendZero, inputValidator} from "./funcs";
 let app = new PomodoroApp(true);
 
 it('takes minutes and returns total seconds', () => {
@@ -31,16 +31,6 @@ describe('Append Zero function', () => {
         expect(result).toBe(10020020000);
     });
 });
-
-function inputValidator(userInput) {
-    if (isNaN(userInput)){
-        return false;
-    }
-    if (userInput % 1 != 0){
-        return false;
-    }
-    return true;
-}
 
 describe('Input Validator function', () => {
 
