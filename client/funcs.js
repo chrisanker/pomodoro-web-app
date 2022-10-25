@@ -137,5 +137,3 @@ export function updateTimes(){
     document.getElementById("minutes").innerHTML = minutes;
     closeSpan();
 }
-
-
