@@ -39,12 +39,15 @@ function inputValidator(userInput) {
     return true;
 }
 
-it('disallows non-numeric values', () => {
-    let userInput = 'x';
-    let disallowed = inputValidator(userInput);
-    expect(disallowed).toBe(true);
-});
+describe('Input Validator function', () => {
+    it('disallows non-numeric values', () => {
+        let userInput = 'x';
+        let disallowed = inputValidator(userInput);
+        expect(disallowed).toBe(true);
+    });
 
-it('should allow only integers', () => {
-    expect(inputValidator(20)).toBe(true);
+    it('should allow only integers', () => {
+        let allowed = inputValidator(20)
+        expect(allowed).toBe(true);
+    });
 });
