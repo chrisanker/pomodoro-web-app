@@ -49,3 +49,16 @@ describe('Input Validator function', () => {
         expect(allowed).toBe(false);
     });
 });
+
+function getAndValidateUserInput() {
+    const userInput = 'some string';
+    if (inputValidator(userInput)){
+        return undefined;
+    }
+    return 'Alert has been triggered';
+}
+
+it('should alert user when user input is not an integer', function () {
+    let result = getAndValidateUserInput();
+    expect(result).toBe('Alert has been triggered')
+});

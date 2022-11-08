@@ -3,10 +3,10 @@ import {initialiseApp, updateTimes, openSettings, closeSpan, setDefaultTimes, in
 const mainBtn = document.getElementById("button");
 const settingsBtn = document.getElementById("settings");
 const saveBtn = document.getElementById("save");
-const closeSetttings = document.getElementById("close");
+const closeSettings = document.getElementById("close");
 
 mainBtn.addEventListener("click", initialiseApp);
 settingsBtn.addEventListener("click", openSettings);
 saveBtn.addEventListener("click", updateTimes);
-closeSetttings.addEventListener("click", closeSpan);
+closeSettings.addEventListener("click", closeSpan);
 window.addEventListener("load", setDefaultTimes);
