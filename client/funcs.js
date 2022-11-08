@@ -4,8 +4,9 @@ let seconds;
 let totalTime;
 
 export class PomodoroApp {
-    constructor(breakMode) {
+    constructor(breakMode, workTime) {
         this.breakMode = breakMode;
+        this.workTime = workTime;
     }
 }
 
@@ -156,4 +157,12 @@ export function inputValidator(userInput) {
         return false;
     }
     return true;
+}
+
+export function getAndValidateUserInput(pomodoroApp) {
+    const pomodoroInput = pomodoroApp.workTime
+    if (inputValidator(pomodoroInput)) {
+        return undefined;
+    }
+    return 'Alert has been triggered';
 }

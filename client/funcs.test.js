@@ -1,4 +1,4 @@
-import {convertMinsToSecs, PomodoroApp, appendZero, inputValidator} from "./funcs";
+import { convertMinsToSecs, PomodoroApp, appendZero, inputValidator, getAndValidateUserInput } from "./funcs";
 let app = new PomodoroApp(true);
 
 it('takes minutes and returns total seconds', () => {
@@ -48,17 +48,19 @@ describe('Input Validator function', () => {
         let allowed = inputValidator(23.2);
         expect(allowed).toBe(false);
     });
+
+    it('should disallow undefined', () => {
+        let allowed = inputValidator(undefined);
+        expect(allowed).toBe(false);
+    });
 });
 
-function getAndValidateUserInput() {
-    const userInput = 'some string';
-    if (inputValidator(userInput)){
-        return undefined;
-    }
-    return 'Alert has been triggered';
-}
-
 it('should alert user when user input is not an integer', function () {
-    let result = getAndValidateUserInput();
+    let result = getAndValidateUserInput(new PomodoroApp(false, 'not an integer'));
     expect(result).toBe('Alert has been triggered')
+});
+
+it('should not alert user when user input is an integer', function () {
+    let result = getAndValidateUserInput(new PomodoroApp(false, 25));
+    expect(result).toBe(undefined)
 });
