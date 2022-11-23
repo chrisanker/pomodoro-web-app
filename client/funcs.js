@@ -43,6 +43,10 @@ export function setDefaultTimes(){
     document.getElementById('seconds').innerText = '00';
 }
 
+export function changeStateToBreak() {
+    app.breakMode = true;
+}
+
 
 function playWorkSound(){
     const work = new Audio('resources/audio/work.mp3');
