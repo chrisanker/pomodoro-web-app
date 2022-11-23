@@ -44,7 +44,7 @@ export function setDefaultTimes(){
 }
 
 export function changeStateToBreak() {
-    app.breakMode = true;
+    pomodoroApp.breakMode = true;
 }
 
 
@@ -59,7 +59,7 @@ function playBreakSound(){
 }
 
 function startBreak(){
-    pomodoroApp.breakMode = true;
+    changeStateToBreak();
     document.getElementById("minutes").innerHTML = "00";
     totalTime = convertMinsToSecs(document.getElementById('shortbreak').value);
     playBreakSound();
