@@ -19,18 +19,18 @@ export function convertMinsToSecs (minutes){
 
 export function initialiseApp() {
     console.log("starting app");
-    let buttonText = document.getElementById("button").innerText;
-    if (buttonText === 'START') {
+    let startstopText = document.getElementById("startstop").innerText;
+    if (startstopText === 'START') {
         if (totalTime === 1500) {
             playWorkSound();
         }
-        document.getElementById("button").innerHTML = "STOP";
+        document.getElementById("startstop").innerHTML = "STOP";
         pomodoroApp.breakMode = false;
         countDown();
     }
-    if (buttonText === "STOP") {
+    if (startstopText === "STOP") {
         clearInterval(intervalID);
-        document.getElementById("button").innerHTML = "START";
+        document.getElementById("startstop").innerHTML = "START";
     }
 }
 
@@ -145,12 +145,4 @@ export function appendZero(number) {
         return '0' + number;
     }
     return number;
-}
-
-export function getAndValidateUserInput(pomodoroApp) {
-    const pomodoroInput = pomodoroApp.workTime
-    if (inputValidator(pomodoroInput)) {
-        return undefined;
-    }
-    return 'Alert has been triggered';
 }

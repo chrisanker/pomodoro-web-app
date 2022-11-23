@@ -1,6 +1,6 @@
-import {initialiseApp, updateTimes, openSettings, closeSpan, setDefaultTimes, inputValidator,} from "./funcs.js";
+import {initialiseApp, updateTimes, openSettings, closeSpan, setDefaultTimes} from "./funcs.js";
 
-const mainBtn = document.getElementById("button");
+const mainBtn = document.getElementById("startstop");
 const settingsBtn = document.getElementById("settings");
 const saveBtn = document.getElementById("save");
 const closeSettings = document.getElementById("close");
