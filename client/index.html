@@ -22,7 +22,7 @@
                     <span id="close" class="close">&times;</span>
                     <p>Customize your work and break time</p>
                     <label>Pomodoro</label>
-                    <input type="text" name="pomodoro" id="pomodoro"><span class="unit-minutes" >minutes</span><br>
+                    <input type="number" name="pomodoro" id="pomodoro"><span class="unit-minutes" >minutes</span><br>
                     <label>Short Break</label>
                     <input type="text" id="shortbreak" readonly="true" style="background: lightgray" value="5"><span class="unit-minutes" >minutes</span><br>
                     <label>Long Break</label>
@@ -31,12 +31,12 @@
                 </div>
             </div>
         </div>
-    </header>    
+    </header>
     <div>
         <div id="circle" class="circle"></div>
     </div>
     <div class="countdowntimer" id="timer"><span id="minutes"></span>:<span id="seconds"></span></div>
-    <div class="wrapper">       
+    <div class="wrapper">
         <button type="button" id="button" class="button">START</button>
     </div>
     <footer>
