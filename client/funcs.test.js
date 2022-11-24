@@ -32,3 +32,11 @@ describe('Append Zero function', () => {
     });
 });
 
+describe('Colour changer', () => {
+    it('should return green colour when changing to break mode', function () {
+        app.breakMode = true;
+        let colour = app.circleColourChanger(app.breakMode);
+        expect(colour).toBe('green');
+    });
+});
+

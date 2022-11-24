@@ -8,6 +8,10 @@ export class PomodoroApp {
         this.breakMode = breakMode;
         this.workTime = workTime;
     }
+
+    circleColourChanger(breakMode) {
+        return 'green';
+    }
 }
 
 let pomodoroApp = new PomodoroApp(false);
