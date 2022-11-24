@@ -9,8 +9,13 @@ export class PomodoroApp {
         this.workTime = workTime;
     }
 
-    circleColourChanger(breakMode) {
-        return 'green';
+    circleColourChanger() {
+        if (this.breakMode){
+            return 'green';
+        }
+        else {
+            return 'red';
+        }
     }
 }
 
