@@ -30,9 +30,7 @@ export function initialiseApp() {
     console.log("starting app");
     let startstopText = document.getElementById("startstop").innerText;
     if (startstopText === 'START') {
-        if (totalTime === 1500) {
-            playWorkSound();
-        }
+        playWorkSound();
         document.getElementById("startstop").innerHTML = "STOP";
         pomodoroApp.breakMode = false;
         countDown();
@@ -76,7 +74,7 @@ function startBreak(){
 }
 
 function countDown(){
-    changeBgColor();
+    document.getElementById("circle").style.backgroundColor = pomodoroApp.circleColourChanger();
     if (pomodoroApp.breakMode){
         intervalID = setInterval(() => {
             if (totalTime <= 0) {
@@ -119,15 +117,6 @@ function decrementTime(){
     seconds = appendZero(totalTime % 60);
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;
-}
-
-function changeBgColor(){
-    if (pomodoroApp.breakMode){
-        document.getElementById("circle").style.backgroundColor = "green"
-    }
-    else {
-        document.getElementById("circle").style.backgroundColor = "red"
-    }
 }
 
 function callVisitorLogger(){
