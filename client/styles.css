@@ -82,8 +82,8 @@ body, button {
 }
 
 .settings {
-	width: 4rem;
-	height: 4rem;
+	width: 3em;
+	height: 3em;
 	border-radius: 8px;
 	cursor: pointer;
 	background: lightsalmon;
@@ -109,11 +109,6 @@ footer {
 		width: 7em;
 		height: 7em;
 		margin-top: 50px;
-	}
-	.settings{
-		width: 1vw;
-		height: 1vw;
-		border-color: ghostwhite;
 	}
 }
 
