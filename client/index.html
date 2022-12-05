@@ -15,18 +15,19 @@
             <i class="fa fa-sliders fa-2x" aria-hidden="true"></i>
         </button>
     </header>
-        <div>
-            
+        <div>            
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span id="close" class="close">&times;</span>
-                    <p>Customize your work and break time</p>
-                    <label>Pomodoro</label>
-                    <input type="number" name="pomodoro" id="pomodoro"><span class="unit-minutes" >minutes</span><br>
-                    <label>Short Break</label>
-                    <input type="number" id="shortbreak"><span class="unit-minutes" >minutes</span><br>
-                    <label>Long Break</label>
-                    <input type="number" readonly="true" style="background: lightgray"><span class="unit-minutes">minutes</span><br>
+                    <h4>Customize your work and break time</h4>
+                    <div id="settings-grid">
+                        <label>Pomodoro:</label>
+                        <input type="number" name="pomodoro" id="pomodoro"><span>minutes</span>
+                        <label>Short Break:</label>
+                        <input type="number" id="shortbreak"><span>minutes</span>
+                        <label>Long Break:</label>
+                        <input type="number" readonly="true" style="background: lightgray"><span>minutes</span>
+                    </div>
                     <button id="save">Save</button>
                 </div>
             </div>

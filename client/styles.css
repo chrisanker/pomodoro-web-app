@@ -25,7 +25,7 @@ body, button {
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 50%;
+	width: 80vw;
 	height: 40%;
 }
 
@@ -110,8 +110,32 @@ footer {
 		height: 7em;
 		margin-top: 50px;
 	}
+	
+	.modal-content{
+		width: 20em;
+	}
 }
 
 .unit-minutes {
 	padding-left: 10px;
+}
+
+#settings-grid {
+	display: grid; 
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 6em 2em 4em;
+	gap: 1vh;
+	justify-content: center;
+	align-content: space-between;
+	font-size: 0.7em;
+	text-align: left;
+}
+
+input {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+#save {
+	margin-top: 1em;
 }
