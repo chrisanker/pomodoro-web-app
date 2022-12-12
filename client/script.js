@@ -1,4 +1,4 @@
-import {initialiseApp, updateTimes, openSettings, closeSpan, setDefaultTimes, PomodoroApp, createPomodoroAppInstance} from "./funcs.js";
+import {initialiseApp, updateTimes, openSettings, closeSpan, setDefaultTimes, createPomodoroAppInstance} from "./funcs.js";
 
 const mainBtn = document.getElementById("startstop");
 const settingsBtn = document.getElementById("settings");

@@ -5,6 +5,11 @@ let totalTime;
 let pomodoroApp;
 
 export class PomodoroApp {
+    breakMode;
+    workTime;
+    longBreakTime;
+    shortBreakTime;
+
     constructor(breakMode, shortBreakTime, workTime, longBreakTime) {
         this.breakMode = breakMode;
         this.shortBreakTime = shortBreakTime
@@ -13,20 +18,16 @@ export class PomodoroApp {
     }
 
     circleColourChanger() {
-        if (this.breakMode){
+        if (this.breakMode) {
             return 'green';
-        }
-        else {
+        } else {
             return 'red';
         }
     }
 }
 
 export function createPomodoroAppInstance() {
-    pomodoroApp = new PomodoroApp(true, 5, 25, 20)
-    document.getElementById("pomodoro").value = pomodoroApp.workTime;
-    document.getElementById("shortbreak").value = pomodoroApp.shortBreakTime;
-    document.getElementById("longbreak").value = pomodoroApp.longBreakTime;
+    pomodoroApp = new PomodoroApp(true, 5, 25, 20);
 }
 
 export function convertMinsToSecs (minutes){
@@ -51,15 +52,13 @@ export function initialiseApp() {
 
 export function setDefaultTimes(){
     console.log("page loaded");
-    totalTime = convertMinsToSecs(minutes);
+    totalTime = convertMinsToSecs(pomodoroApp.workTime);
+    document.getElementById("pomodoro").value = pomodoroApp.workTime;
+    document.getElementById("shortbreak").value = pomodoroApp.shortBreakTime;
+    document.getElementById("longbreak").value = pomodoroApp.longBreakTime;
     document.getElementById('minutes').innerText = pomodoroApp.workTime;
     document.getElementById('seconds').innerText = '00';
 }
-
-export function changeStateToBreak() {
-    pomodoroApp.breakMode = true;
-}
-
 
 function playWorkSound(){
     const work = new Audio('resources/audio/work.mp3');
@@ -72,7 +71,7 @@ function playBreakSound(){
 }
 
 function startBreak(){
-    changeStateToBreak();
+    pomodoroApp.breakMode = true;
     document.getElementById("minutes").innerHTML = "00";
     totalTime = convertMinsToSecs(document.getElementById('shortbreak').value);
     playBreakSound();
@@ -85,7 +84,6 @@ function countDown(){
         intervalID = setInterval(() => {
             if (totalTime <= 0) {
                 clearInterval(intervalID);
-                //document.getElementById("button").innerHTML = "START";
                 startWork();
             }
             decrementTime();
@@ -95,7 +93,6 @@ function countDown(){
         intervalID = setInterval(() => {
             if (totalTime <= 0) {
                 clearInterval(intervalID);
-                //document.getElementById("button").innerHTML = "START";
                 startBreak();
             }
             decrementTime();
@@ -110,7 +107,7 @@ function startWork(){
         minutes = document.getElementById("pomodoro").value;
     }
     else {
-        minutes = 25;
+        minutes = pomodoroApp.workTime;
     }
     document.getElementById("minutes").innerHTML = minutes;
     totalTime = convertMinsToSecs(minutes);

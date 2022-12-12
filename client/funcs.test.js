@@ -1,14 +1,9 @@
-import {appendZero, changeStateToBreak, convertMinsToSecs, PomodoroApp} from "./funcs";
+import {appendZero, convertMinsToSecs, PomodoroApp} from "./funcs";
 
 let app = new PomodoroApp(true);
 
 it('takes minutes and returns total seconds', () => {
     expect(convertMinsToSecs(25)).toBe(1500);
-});
-
-it('returns the state of the app', () => {
-    changeStateToBreak();
-    expect(app.breakMode).toBe(true);
 });
 
 describe('Append Zero function', () => {
@@ -47,17 +42,18 @@ describe('Pomodoro app constructor', () => {
     let app;
     beforeEach(() => {
         app = new PomodoroApp(true, 5, 25, 20)
-    })
+    });
+
     it('has a five minute default short break', () => {
         expect(app.shortBreakTime).toBe(5);
-    } )
+    });
 
     it('has a 25 minute default work time', () => {
         expect(app.workTime).toBe(25);
-    } )
+    });
 
     it('has a default long break of 20 minutes', () => {
         expect(app.longBreakTime).toBe(20);
-    })
+    });
 })
 
