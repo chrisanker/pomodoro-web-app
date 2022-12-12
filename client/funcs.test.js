@@ -43,3 +43,13 @@ describe('Colour changer', () => {
     });
 });
 
+it('has a five minute default short break', () => {
+    let app = new PomodoroApp(true, 5)
+    expect(app.shortBreakTime).toBe(5);
+} )
+
+it('has a 25 minute default work time', () => {
+    let app = new PomodoroApp(true, 5, 25)
+    expect(app.workTime).toBe(25);
+} )
+

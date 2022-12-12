@@ -4,8 +4,9 @@ let seconds;
 let totalTime;
 
 export class PomodoroApp {
-    constructor(breakMode, workTime) {
+    constructor(breakMode, shortBreakTime, workTime) {
         this.breakMode = breakMode;
+        this.shortBreakTime = shortBreakTime
         this.workTime = workTime;
     }
 
