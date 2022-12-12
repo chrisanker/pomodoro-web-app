@@ -2,12 +2,14 @@ let intervalID;
 let minutes;
 let seconds;
 let totalTime;
+let pomodoroApp;
 
 export class PomodoroApp {
-    constructor(breakMode, shortBreakTime, workTime) {
+    constructor(breakMode, shortBreakTime, workTime, longBreakTime) {
         this.breakMode = breakMode;
         this.shortBreakTime = shortBreakTime
         this.workTime = workTime;
+        this.longBreakTime = longBreakTime;
     }
 
     circleColourChanger() {
@@ -20,7 +22,12 @@ export class PomodoroApp {
     }
 }
 
-let pomodoroApp = new PomodoroApp(false);
+export function createPomodoroAppInstance() {
+    pomodoroApp = new PomodoroApp(true, 5, 25, 20)
+    document.getElementById("pomodoro").value = pomodoroApp.workTime;
+    document.getElementById("shortbreak").value = pomodoroApp.shortBreakTime;
+    document.getElementById("longbreak").value = pomodoroApp.longBreakTime;
+}
 
 export function convertMinsToSecs (minutes){
     const secsInMinutes = 60
@@ -44,10 +51,8 @@ export function initialiseApp() {
 
 export function setDefaultTimes(){
     console.log("page loaded");
-    minutes = 25;
     totalTime = convertMinsToSecs(minutes);
-    document.getElementById('pomodoro').value = minutes;
-    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('minutes').innerText = pomodoroApp.workTime;
     document.getElementById('seconds').innerText = '00';
 }
 
@@ -118,11 +123,6 @@ function decrementTime(){
     seconds = appendZero(totalTime % 60);
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;
-}
-
-function callVisitorLogger(){
-    const loggerURL = "https://timed-tomatoes-page-load-logger.azurewebsites.net/api/visitorlogger"
-    fetch(loggerURL).then(res => console.log(res) );
 }
 
 const modal = document.getElementById("myModal");
