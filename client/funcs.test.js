@@ -6,16 +6,18 @@ it('takes minutes and returns total seconds', () => {
 });
 
 describe('Append Zero function', () => {
+    let number;
+    let result;
 
     it('appends a zero to 1', () => {
-        let number = 1;
-        let result = appendZero(number);
+        number = 1;
+        result = appendZero(number);
         expect(result).toBe('01');
     });
 
     it('appends only a zero to values lower than 10', () => {
-        let number = 10;
-        let result = appendZero(number);
+        number = 10;
+        result = appendZero(number);
         expect(result).toBe(10);
         number = 10020020000;
         result = appendZero(number);
@@ -23,12 +25,9 @@ describe('Append Zero function', () => {
     });
 });
 
-describe('Colour changer', () => {
-
-});
-
 describe('Pomodoro app constructor', () => {
     let app;
+    let colour;
     beforeEach(() => {
         app = new PomodoroApp(true, 5, 25, 20)
     });
@@ -47,13 +46,13 @@ describe('Pomodoro app constructor', () => {
 
     it('should return green colour when changing to break mode', function () {
         app.breakMode = true;
-        let colour = app.circleColourChanger();
+        colour = app.circleColourChanger();
         expect(colour).toBe('green');
     });
 
     it('should return red colour when changing to break mode', function () {
         app.breakMode = false;
-        let colour = app.circleColourChanger();
+        colour = app.circleColourChanger();
         expect(colour).toBe('red');
     });
 })
