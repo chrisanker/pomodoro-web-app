@@ -4,11 +4,11 @@ export class PomodoroApp {
     longBreakTime;
     shortBreakTime;
 
-    constructor(breakMode, shortBreakTime, workTime, longBreakTime) {
-        this.breakMode = breakMode;
-        this.shortBreakTime = shortBreakTime
-        this.workTime = workTime;
-        this.longBreakTime = longBreakTime;
+    constructor() {
+        this.breakMode = true;
+        this.workTime = 25
+        this.shortBreakTime = 5;
+        this.longBreakTime = 20;
     }
 
     circleColourChanger() {
@@ -17,5 +17,9 @@ export class PomodoroApp {
         } else {
             return 'red';
         }
+    }
+
+    getLongBreakTime() {
+        return this.longBreakTime;
     }
 }

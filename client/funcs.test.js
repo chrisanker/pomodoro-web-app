@@ -29,7 +29,7 @@ describe('Pomodoro app constructor', () => {
     let app;
     let colour;
     beforeEach(() => {
-        app = new PomodoroApp(true, 5, 25, 20)
+        app = new PomodoroApp()
     });
 
     it('has a five minute default short break', () => {
@@ -38,10 +38,6 @@ describe('Pomodoro app constructor', () => {
 
     it('has a 25 minute default work time', () => {
         expect(app.workTime).toBe(25);
-    });
-
-    it('has a default long break of 20 minutes', () => {
-        expect(app.longBreakTime).toBe(20);
     });
 
     it('should return green colour when changing to break mode', function () {
@@ -54,6 +50,11 @@ describe('Pomodoro app constructor', () => {
         app.breakMode = false;
         colour = app.circleColourChanger();
         expect(colour).toBe('red');
+    });
+
+    it('has a default long break of 20 minutes', () => {
+        let result = app.getLongBreakTime();
+        expect(result).toBe(20);
     });
 })
 
