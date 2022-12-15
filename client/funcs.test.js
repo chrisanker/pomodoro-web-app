@@ -1,6 +1,5 @@
-import {appendZero, convertMinsToSecs, PomodoroApp} from "./funcs";
-
-let app = new PomodoroApp(true);
+import {appendZero, convertMinsToSecs} from "./funcs";
+import {PomodoroApp} from "./PomodoroApp.js";
 
 it('takes minutes and returns total seconds', () => {
     expect(convertMinsToSecs(25)).toBe(1500);
@@ -25,17 +24,7 @@ describe('Append Zero function', () => {
 });
 
 describe('Colour changer', () => {
-    it('should return green colour when changing to break mode', function () {
-        app.breakMode = true;
-        let colour = app.circleColourChanger();
-        expect(colour).toBe('green');
-    });
 
-    it('should return red colour when changing to break mode', function () {
-        app.breakMode = false;
-        let colour = app.circleColourChanger();
-        expect(colour).toBe('red');
-    });
 });
 
 describe('Pomodoro app constructor', () => {
@@ -54,6 +43,18 @@ describe('Pomodoro app constructor', () => {
 
     it('has a default long break of 20 minutes', () => {
         expect(app.longBreakTime).toBe(20);
+    });
+
+    it('should return green colour when changing to break mode', function () {
+        app.breakMode = true;
+        let colour = app.circleColourChanger();
+        expect(colour).toBe('green');
+    });
+
+    it('should return red colour when changing to break mode', function () {
+        app.breakMode = false;
+        let colour = app.circleColourChanger();
+        expect(colour).toBe('red');
     });
 })
 

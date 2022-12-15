@@ -1,30 +1,10 @@
+import { PomodoroApp } from "./PomodoroApp.js";
+
 let intervalID;
 let minutes;
 let seconds;
 let totalTime;
 let pomodoroApp;
-
-export class PomodoroApp {
-    breakMode;
-    workTime;
-    longBreakTime;
-    shortBreakTime;
-
-    constructor(breakMode, shortBreakTime, workTime, longBreakTime) {
-        this.breakMode = breakMode;
-        this.shortBreakTime = shortBreakTime
-        this.workTime = workTime;
-        this.longBreakTime = longBreakTime;
-    }
-
-    circleColourChanger() {
-        if (this.breakMode) {
-            return 'green';
-        } else {
-            return 'red';
-        }
-    }
-}
 
 export function createPomodoroAppInstance() {
     pomodoroApp = new PomodoroApp(true, 5, 25, 20);
