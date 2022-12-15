@@ -56,5 +56,15 @@ describe('Pomodoro app constructor', () => {
         let result = app.getLongBreakTime();
         expect(result).toBe(20);
     });
+
+    it('has a default short break of 5 minutes', () => {
+        let result = app.getShortBreakTime();
+        expect(result).toBe(5);
+    });
+
+    it('has a default work time of 25 minutes', () => {
+        let result = app.getWorkTime();
+        expect(result).toBe(25);
+    });
 })
 

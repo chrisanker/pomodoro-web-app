@@ -22,4 +22,12 @@ export class PomodoroApp {
     getLongBreakTime() {
         return this.longBreakTime;
     }
+
+    getShortBreakTime() {
+        return this.shortBreakTime;
+    }
+
+    getWorkTime() {
+        return this.workTime;
+    }
 }
