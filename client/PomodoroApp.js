@@ -1,12 +1,12 @@
 export class PomodoroApp {
     breakMode;
-    workTime;
+    #workTime;
     longBreakTime;
     shortBreakTime;
 
     constructor() {
         this.breakMode = true;
-        this.workTime = 25
+        this.#workTime = 25;
         this.shortBreakTime = 5;
         this.longBreakTime = 20;
     }
@@ -28,6 +28,6 @@ export class PomodoroApp {
     }
 
     getWorkTime() {
-        return this.workTime;
+        return this.#workTime;
     }
 }

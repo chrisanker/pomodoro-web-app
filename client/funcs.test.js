@@ -37,7 +37,8 @@ describe('Pomodoro app constructor', () => {
     });
 
     it('has a 25 minute default work time', () => {
-        expect(app.workTime).toBe(25);
+        let result = app.getWorkTime();
+        expect(result).toBe(25);
     });
 
     it('should return green colour when changing to break mode', function () {
