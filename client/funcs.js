@@ -7,7 +7,7 @@ let totalTime;
 let pomodoroApp;
 
 export function createPomodoroAppInstance() {
-    pomodoroApp = new PomodoroApp(true, 5, 25, 20);
+    pomodoroApp = new PomodoroApp();
 }
 
 export function convertMinsToSecs (minutes){
@@ -32,11 +32,11 @@ export function initialiseApp() {
 
 export function setDefaultTimes(){
     console.log("page loaded");
-    totalTime = convertMinsToSecs(pomodoroApp.workTime);
-    document.getElementById("pomodoro").value = pomodoroApp.workTime;
+    totalTime = convertMinsToSecs(pomodoroApp.getWorkTime());
+    document.getElementById("pomodoro").value = pomodoroApp.getWorkTime();
     document.getElementById("shortbreak").value = pomodoroApp.shortBreakTime;
     document.getElementById("longbreak").value = pomodoroApp.longBreakTime;
-    document.getElementById('minutes').innerText = pomodoroApp.workTime;
+    document.getElementById('minutes').innerText = pomodoroApp.getWorkTime();
     document.getElementById('seconds').innerText = '00';
 }
 
