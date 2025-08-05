@@ -1,17 +1,26 @@
 {
-  "name": "",
+  "name": "pomodoro-web-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Pomodoro timer app built with Vue.js",
+  "author": "Christian Anker Larsen",
   "scripts": {
-    "start": "func start",
-    "test": "jest"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.19.3",
-    "azure-functions-core-tools": "^4.x",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/vue3-jest": "^29.2.2",
     "babel-jest": "^29.1.2",
-    "jest": "^28.1.2",
-    "jest-environment-jsdom": "^28.1.2",
-    "jest-environment-jsdom-global": "^4.0.0"
+    "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
+    "vite": "^4.4.5"
   }
 }
