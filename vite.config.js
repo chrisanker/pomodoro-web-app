@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.esm-bundler.js'
+      vue: process.env.NODE_ENV === 'production' ? 'vue/dist/vue.runtime.esm-bundler.prod.js' : 'vue/dist/vue.esm-bundler.js'
     }
   }
 }) 
