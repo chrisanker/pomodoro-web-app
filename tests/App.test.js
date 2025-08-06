@@ -9,6 +9,11 @@ describe('App', () => {
 
   describe('start button', () => {
     let data;
+    
+    afterEach(() => {
+      data = null
+    })
+
     it('has a start button that is initially enabled', () => {
       data = App.data()
       expect(data.isRunning).toBe(false)
