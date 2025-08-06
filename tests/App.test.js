@@ -16,7 +16,7 @@ describe('App', () => {
 
     it('sets isRunning to true when start button is clicked', () => {
       const app = App.methods
-      const data = { isRunning: false }
+      data = { isRunning: false }
 
       app.startTimer.call(data)
       expect(data.isRunning).toBe(true)
@@ -24,7 +24,7 @@ describe('App', () => {
 
     it('starts counting down when timer starts', () => {
       const app = App.methods
-      const data = {
+      data = {
         isRunning: false,
         minutes: 25,
         seconds: 0,
@@ -43,7 +43,7 @@ describe('App', () => {
 
     it('updates timeDisplay for each second of countdown', () => {
       const app = App.methods
-      const data = {
+      data = {
         isRunning: false,
         minutes: 25,
         seconds: 0,
